@@ -1,0 +1,351 @@
+:root {
+  --main-color: #2196f3;
+  --second-color: #2196f3;
+  --third-color: #2196f3;
+}
+
+.create-btn, .popup form input[type=submit] {
+  background-color: var(--main-color);
+  color: white;
+  width: 200px;
+  height: 80px;
+  margin: 60px 20px 20px;
+}
+.create-btn:hover, .popup form input[type=submit]:hover {
+  color: white;
+}
+
+body {
+  height: 100vh;
+}
+body.overlay {
+  position: relative;
+  overflow: hidden;
+}
+body.overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.header {
+  background-color: var(--main-color);
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.page-content .container {
+  position: relative;
+  min-height: 100vh;
+}
+.page-content .container .tasks-page {
+  position: relative;
+  left: 50%;
+  top: 100px;
+  transform: translateX(-50%);
+  width: 100%;
+  border-radius: 12px;
+  padding: 10px;
+}
+.page-content .container .tasks-page > .task {
+  margin-top: 20px;
+  width: 95%;
+}
+.page-content .container .tasks-page > .task .svg-box,
+.page-content .container .tasks-page > .task .remove-box,
+.page-content .container .tasks-page > .task .progress-box {
+  border-color: var(--main-color);
+}
+.page-content .container .tasks-page > .task .svg-box svg,
+.page-content .container .tasks-page > .task .remove-box svg,
+.page-content .container .tasks-page > .task .progress-box svg {
+  color: var(--main-color);
+}
+.page-content .container .tasks-page > .task::before {
+  background-color: var(--main-color);
+}
+.page-content .container .tasks-page .progress-tasks {
+  position: relative;
+  margin-top: 200px;
+  border-radius: 12px;
+  padding: 20px;
+  width: 98%;
+}
+.page-content .container .tasks-page .progress-tasks .task .svg-box,
+.page-content .container .tasks-page .progress-tasks .task .remove-box,
+.page-content .container .tasks-page .progress-tasks .task .progress-box {
+  border-color: var(--second-color);
+}
+.page-content .container .tasks-page .progress-tasks .task .svg-box svg,
+.page-content .container .tasks-page .progress-tasks .task .remove-box svg,
+.page-content .container .tasks-page .progress-tasks .task .progress-box svg {
+  color: var(--second-color);
+}
+.page-content .container .tasks-page .progress-tasks .task::before {
+  background-color: var(--second-color);
+}
+.page-content .container .tasks-page .achieved-tasks {
+  position: relative;
+  margin-top: 200px;
+  border-radius: 12px;
+  padding: 20px;
+  width: 95%;
+}
+.page-content .container .tasks-page .achieved-tasks .task .svg-box,
+.page-content .container .tasks-page .achieved-tasks .task .remove-box,
+.page-content .container .tasks-page .achieved-tasks .task .progress-box {
+  border-color: var(--third-color);
+}
+.page-content .container .tasks-page .achieved-tasks .task .svg-box svg,
+.page-content .container .tasks-page .achieved-tasks .task .remove-box svg,
+.page-content .container .tasks-page .achieved-tasks .task .progress-box svg {
+  color: var(--third-color);
+}
+.page-content .container .tasks-page .achieved-tasks .task::before {
+  background-color: var(--third-color);
+}
+.page-content .container .tasks-page .achieved-tasks .achieve-box::before {
+  transform: translate(-3px, 11px) rotate(-55deg);
+  width: 50%;
+  background-color: rgb(69, 214, 69);
+}
+.page-content .container .tasks-page .achieved-tasks .achieve-box::after {
+  transform: translate(-3px, -6px) rotate(-25deg);
+  background-color: rgb(69, 214, 69);
+  width: 110%;
+}
+
+.popup {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #eee;
+  width: 85%;
+  height: 70%;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup .delete-popup {
+  background-color: var(--main-color);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  transition: 0.3s;
+}
+.popup form {
+  text-align: center;
+}
+.popup form input:not([type=submit]) {
+  border: none;
+  padding: 20px;
+  width: 95%;
+  margin: 10px;
+}
+.popup form input:not([type=submit]):focus {
+  outline: none;
+}
+.popup form input[type=submit] {
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.task-page {
+  display: none;
+}
+
+.active-task-page {
+  width: 100%;
+  position: relative;
+}
+.active-task-page .back-btn {
+  color: var(--main-color) !important;
+  font-weight: bold !important;
+}
+.active-task-page p {
+  margin-top: 50px;
+  width: 90%;
+  margin: 50px 20px;
+  overflow-wrap: break-word;
+  line-height: 1.7;
+}
+
+h2 {
+  position: absolute;
+  top: -22px;
+  background-color: #eee;
+  width: calc(95% - 20px);
+  padding: 10px 10px 0;
+  border-radius: 20px 20px 0px 0px;
+}
+h2 .color-list {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0px 0px 45px;
+}
+h2 .color-list li {
+  width: 24px;
+  height: 24px;
+  background-color: black;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+h2 .color-list li.active, h2 .color-list li:hover {
+  border-color: white;
+}
+h2 .color-list li:first-child {
+  background-color: #f44336;
+}
+h2 .color-list li:nth-child(2) {
+  background-color: #2196f3;
+}
+h2 .color-list li:nth-child(3) {
+  background-color: #9c27b0;
+}
+h2 .color-list li:nth-child(4) {
+  background-color: #673ab7;
+}
+h2 .color-list li:nth-child(5) {
+  background-color: #607d8b;
+}
+
+.task {
+  width: 98%;
+  background-color: white;
+  padding: 12px 10px;
+  transition: 0.4s;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  font-size: 13px;
+  margin-top: 12px;
+  box-shadow: 0 0 5px black;
+}
+@media (max-width: 556px) {
+  .task {
+    width: 102%;
+  }
+}
+.task:hover {
+  margin-left: 50px;
+  color: white;
+  background-color: transparent;
+  box-shadow: 0 0 0;
+}
+@media (max-width: 991px) {
+  .task:hover {
+    margin-left: 20px;
+  }
+}
+.task:hover::before {
+  width: 100%;
+  z-index: -1;
+}
+.task:hover .tools-box .svg-box, .task:hover .tools-box .remove-box, .task:hover .tools-box .progress-box {
+  border-color: white !important;
+}
+.task:hover .tools-box .svg-box svg, .task:hover .tools-box .remove-box svg, .task:hover .tools-box .progress-box svg {
+  color: white !important;
+}
+.task:hover:hover .achieve-box {
+  transform: translateX(-10px);
+}
+.task:hover:hover .achieve-box::before {
+  transform: translate(-3px, 11px) rotate(-55deg);
+  width: 50%;
+  background-color: white;
+}
+.task:hover:hover .achieve-box::after {
+  transform: translate(-3px, -6px) rotate(-25deg);
+  background-color: white;
+  width: 110%;
+}
+.task::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 5px;
+  top: 0;
+  left: 0;
+  transition: inherit;
+}
+.task .tools-box {
+  display: flex;
+  align-items: center;
+}
+.task .tools-box .svg-box,
+.task .tools-box .remove-box,
+.task .tools-box .progress-box {
+  border-radius: 50%;
+  border: 2px solid var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  margin-left: 20px;
+  z-index: 10;
+}
+@media (max-width: 556px) {
+  .task .tools-box .svg-box,
+.task .tools-box .remove-box,
+.task .tools-box .progress-box {
+    margin-left: 3px;
+  }
+}
+.task .tools-box .svg-box svg,
+.task .tools-box .remove-box svg,
+.task .tools-box .progress-box svg {
+  transition: 0.4s;
+  padding: 10px;
+}
+.task .tools-box .achieve-box {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: transparent;
+}
+@media (max-width: 556px) {
+  .task .tools-box .achieve-box {
+    width: 30px;
+  }
+}
+.task .tools-box .achieve-box::before, .task .tools-box .achieve-box::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--second-color);
+  left: 0;
+  transition: 0.4s;
+}
+.task .tools-box .achieve-box::before {
+  top: 0;
+}
+.task .tools-box .achieve-box::after {
+  bottom: 0;
+}
+.task .tools-box .remove-box {
+  width: 40px;
+  height: 40px;
+}/*# sourceMappingURL=todo.css.map */
