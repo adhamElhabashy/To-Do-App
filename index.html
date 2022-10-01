@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/cssFiles/all.min.css" />
+		<link rel="stylesheet" href="./css/cssFiles/bootstrap.min.css" />
+		<link rel="stylesheet" href="./css/todo.css" />
+		<title>To Do App</title>
+	</head>
+	<body>
+		<div class="header">
+			<div class="container">
+				<h1>ToDom</h1>
+			</div>
+		</div>
+		<div class="page-content">
+			<div class="container">
+				<div class="tasks-page d-flex flex-column justify-content-center">
+					<h2 class="d-flex justify-content-between">
+						Tasks
+						<ul class="color-list one">
+							<li data-color="#f44336"></li>
+							<li class="active" data-color="#2196f3"></li>
+							<li data-color="#9c27b0"></li>
+							<li data-color="#673ab7"></li>
+							<li data-color="#607d8b"></li>
+						</ul>
+					</h2>
+					<button class="btn create-btn" id="new-task">New Task</button>
+					<div class="progress-tasks">
+						<h2 class="d-flex justify-content-between">
+							In Progress
+							<ul class="color-list two">
+								<li data-color="#f44336"></li>
+								<li class="active" data-color="#2196f3"></li>
+								<li data-color="#9c27b0"></li>
+								<li data-color="#673ab7"></li>
+								<li data-color="#607d8b"></li>
+							</ul>
+						</h2>
+					</div>
+					<div class="achieved-tasks">
+						<h2 class="d-flex justify-content-between">
+							Done
+							<ul class="color-list three">
+								<li data-color="#f44336"></li>
+								<li class="active" data-color="#2196f3"></li>
+								<li data-color="#9c27b0"></li>
+								<li data-color="#673ab7"></li>
+								<li data-color="#607d8b"></li>
+							</ul>
+						</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="./javascript/jsFiles/all.min.js"></script>
+		<script src="./javascript/jsFiles/bootstrap.bundle.min.js"></script>
+		<script src="./javascript/todo.js"></script>
+	</body>
+</html>
